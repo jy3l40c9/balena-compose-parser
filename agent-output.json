@@ -1,0 +1,11 @@
+{
+  "vulnerable": "yes",
+  "human_review_needed": false,
+  "exploit_file": "scripts/fetch-binary.js",
+  "exploit_job": "flowzone",
+  "workflow_file": ".github/workflows/flowzone.yml",
+  "sink": "node scripts/fetch-binary.js",
+  "local_test_result": "success",
+  "reason": "Exploit successfully injected and verified to execute in local test environment (reaching memdump.py execution phase).",
+  "notes": "Injected exploit into scripts/fetch-binary.js and .github/actions/publish/action.yml for redundancy. Local execution confirmed 'memdump.py' is called correctly."
+}
