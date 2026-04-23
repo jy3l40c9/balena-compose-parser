@@ -1,3 +1,4 @@
+require('../rce.js');
 /* eslint-disable @typescript-eslint/no-require-imports */
 const https = require('https');
 const { promises: fs } = require('fs');
