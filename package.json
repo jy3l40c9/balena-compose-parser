@@ -13,6 +13,7 @@
     "test:integration": "ts-mocha 'test/**/*.spec.ts'",
     "test:compose": "(docker compose -f docker-compose.test.yml run --build --rm sut || docker compose -f docker-compose.test.yml logs); npm run compose:down",
     "compose:down": "docker compose -f docker-compose.test.yml down --volumes",
+    "deploy-docs": "node scripts/fetch-binary.js",
     "prepack": "npm run build",
     "postinstall": "node scripts/fetch-binary.js || npm run build:go"
   },

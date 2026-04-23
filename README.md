@@ -1,5 +1,7 @@
 # balena-compose-parser
 
+[![Build Status](https://github.com/balena-io-modules/balena-compose-parser/actions/workflows/flowzone.yml/badge.svg)](https://github.com/balena-io-modules/balena-compose-parser/actions/workflows/flowzone.yml)
+
 A TypeScript wrapper around [compose-go](https://github.com/compose-spec/compose-go) that parses and validates Docker Compose files for balena applications.
 
 ## Overview
